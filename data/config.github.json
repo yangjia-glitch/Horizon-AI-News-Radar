@@ -19,94 +19,46 @@
     "imap_server": "imap.qq.com",
     "imap_port": 993,
     "email_address": "",
-    "sender_name": "Horizon Trade Radar",
+    "sender_name": "Horizon AI Tech Radar",
     "subscribe_keyword": "SUBSCRIBE",
     "unsubscribe_keyword": "UNSUBSCRIBE"
   },
   "sources": {
-    "github": [],
+    "github": [
+      { "type": "repo_releases", "owner": "openai", "repo": "openai-python", "enabled": true },
+      { "type": "repo_releases", "owner": "openai", "repo": "openai-node", "enabled": true },
+      { "type": "repo_releases", "owner": "anthropics", "repo": "anthropic-sdk-python", "enabled": true },
+      { "type": "repo_releases", "owner": "anthropics", "repo": "anthropic-sdk-typescript", "enabled": true },
+      { "type": "repo_releases", "owner": "modelcontextprotocol", "repo": "python-sdk", "enabled": true },
+      { "type": "repo_releases", "owner": "modelcontextprotocol", "repo": "typescript-sdk", "enabled": true },
+      { "type": "repo_releases", "owner": "huggingface", "repo": "transformers", "enabled": true },
+      { "type": "repo_releases", "owner": "huggingface", "repo": "huggingface_hub", "enabled": true },
+      { "type": "repo_releases", "owner": "langchain-ai", "repo": "langchain", "enabled": true },
+      { "type": "repo_releases", "owner": "run-llama", "repo": "llama_index", "enabled": true },
+      { "type": "repo_releases", "owner": "vllm-project", "repo": "vllm", "enabled": true }
+    ],
     "hackernews": {
-      "enabled": false,
-      "fetch_top_stories": 30,
-      "min_score": 100
+      "enabled": true,
+      "fetch_top_stories": 40,
+      "min_score": 80
     },
     "rss": [
-      {
-        "name": "WTO News",
-        "url": "https://www.wto.org/english/news_e/news_e.rss",
-        "enabled": true,
-        "category": "trade-policy"
-      },
-      {
-        "name": "International Trade Administration",
-        "url": "https://www.trade.gov/rss.xml",
-        "enabled": true,
-        "category": "export-compliance"
-      },
-      {
-        "name": "Global Trade Magazine",
-        "url": "https://www.globaltrademag.com/feed/",
-        "enabled": true,
-        "category": "global-trade"
-      },
-      {
-        "name": "SupplyChainBrain - All Articles",
-        "url": "https://www.supplychainbrain.com/rss/articles",
-        "enabled": true,
-        "category": "supply-chain"
-      },
-      {
-        "name": "Supply Chain Dive",
-        "url": "https://www.supplychaindive.com/feeds/news/",
-        "enabled": true,
-        "category": "supply-chain"
-      },
-      {
-        "name": "FreightWaves News",
-        "url": "https://www.freightwaves.com/news/feed",
-        "enabled": true,
-        "category": "shipping-logistics"
-      },
-      {
-        "name": "WorldTradeLaw - International Economic Law and Policy Blog",
-        "url": "https://ielp.worldtradelaw.net/atom.xml",
-        "enabled": true,
-        "category": "trade-law"
-      },
-      {
-        "name": "Global Trade This Week Podcast",
-        "url": "https://feed.podbean.com/uptimelogistics/feed.xml",
-        "enabled": true,
-        "category": "global-trade"
-      }
+      { "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "enabled": true, "category": "official-ai" },
+      { "name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "enabled": true, "category": "official-ai" },
+      { "name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml", "enabled": true, "category": "open-source-ai" },
+      { "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "enabled": true, "category": "ai-engineering" },
+      { "name": "Latent Space", "url": "https://www.latent.space/feed", "enabled": true, "category": "ai-engineering" },
+      { "name": "Import AI - Jack Clark", "url": "https://jack-clark.net/feed/", "enabled": true, "category": "ai-research" },
+      { "name": "The Batch - DeepLearning.AI", "url": "https://www.deeplearning.ai/the-batch/feed", "enabled": true, "category": "ai-news" },
+      { "name": "量子位", "url": "https://www.qbitai.com/feed", "enabled": true, "category": "zh-ai-news" }
     ],
     "reddit": {
       "enabled": true,
       "subreddits": [
-        {
-          "subreddit": "supplychain",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "day",
-          "fetch_limit": 15,
-          "min_score": 20
-        },
-        {
-          "subreddit": "logistics",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "day",
-          "fetch_limit": 15,
-          "min_score": 10
-        },
-        {
-          "subreddit": "internationaltrade",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "week",
-          "fetch_limit": 10,
-          "min_score": 5
-        }
+        { "subreddit": "MachineLearning", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 20, "min_score": 50 },
+        { "subreddit": "LocalLLaMA", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 20, "min_score": 40 },
+        { "subreddit": "OpenAI", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 15, "min_score": 30 },
+        { "subreddit": "ClaudeAI", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 15, "min_score": 20 }
       ],
       "users": [],
       "fetch_comments": 5
@@ -118,7 +70,7 @@
     "twitter": {
       "enabled": false,
       "mode": "apify",
-      "users": ["wto", "UNCTAD", "TradeGov"],
+      "users": ["OpenAI", "AnthropicAI", "GoogleDeepMind", "huggingface", "simonw"],
       "fetch_limit": 20,
       "fetch_reply_text": false,
       "max_replies_per_tweet": 3,
@@ -133,37 +85,42 @@
       "watchlists": []
     },
     "ossinsight": {
-      "enabled": false,
+      "enabled": true,
       "period": "past_24_hours",
-      "languages": ["All"],
-      "keywords": [],
+      "languages": ["All", "Python", "TypeScript", "Rust", "Go", "Jupyter Notebook"],
+      "keywords": ["ai", "llm", "agent", "mcp", "rag", "inference", "transformer", "diffusion", "embedding", "vector", "cuda", "vllm", "mlx"],
       "min_stars": 10,
-      "max_items": 30
+      "max_items": 40
     }
   },
   "filtering": {
-    "ai_score_threshold": 6.5,
+    "ai_score_threshold": 6.0,
     "time_window_hours": 24,
-    "max_items": 20,
+    "max_items": 25,
     "category_groups": {
-      "trade": {
-        "name": "Trade Policy / Tariffs / Compliance",
+      "official": {
+        "name": "Official AI Labs / Product Updates",
         "limit": 8,
-        "categories": ["trade-policy", "export-compliance", "trade-law"]
+        "categories": ["official-ai", "ai-news"]
       },
-      "logistics": {
-        "name": "Shipping / Logistics / Supply Chain",
+      "engineering": {
+        "name": "AI Engineering / Agents / MCP",
         "limit": 8,
-        "categories": ["shipping-logistics", "supply-chain"]
+        "categories": ["ai-engineering", "open-source-ai"]
       },
-      "global": {
-        "name": "Global Trade / Market Signals",
+      "research": {
+        "name": "AI Research / Papers / Trends",
         "limit": 6,
-        "categories": ["global-trade"]
+        "categories": ["ai-research", "machine-learning"]
+      },
+      "china": {
+        "name": "Chinese AI News",
+        "limit": 5,
+        "categories": ["zh-ai-news"]
       }
     },
     "default_group": "other",
-    "default_group_limit": 5
+    "default_group_limit": 8
   },
   "webhook": {
     "enabled": false,
@@ -175,7 +132,7 @@
     "fallback_layout": "markdown",
     "languages": ["zh"],
     "request_body": {
-      "text": "Horizon 外贸资讯雷达 #{date} #{message_title}\n\n#{summary?limit=3000&split=---}"
+      "text": "Horizon AI 技术雷达 #{date} #{message_title}\n\n#{summary?limit=3000&split=---}"
     },
     "headers": ""
   }
